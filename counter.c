@@ -55,6 +55,7 @@ int main()
     else other++;
 =======
     if (curchar == ' ') spaces++;
+    else other++;
 >>>>>>> origin/feature
   }
 

@@ -9,16 +9,6 @@
 #include <string.h>
 #include <ctype.h>
 
-<<<<<<< HEAD
-#define COUNT_SIZE 26
-#define BUFFER_SIZE 1024
-int main()
-{
-  char buffer[BUFFER_SIZE], input, curchar;
-  int i = 0, count[COUNT_SIZE];
-  int spaces = 0;
-  int other = 0;
-=======
 #define COUNT_SIZE 26
 #define BUFFER_SIZE 1024
 int max(int count[]);
@@ -30,7 +20,6 @@ int main()
   int i = 0, count[COUNT_SIZE];
   int spaces = 0;
   int other = 0;
->>>>>>> origin/feature
 
   // request and read in the string from the user
   printf("Enter text for analysis: ");
@@ -51,12 +40,8 @@ int main()
   for (i = 0; i < strlen(buffer); i++) {
     curchar = toupper(buffer[i]);
     if (curchar >= 65 && curchar <= 90) count[curchar - 65]++;
-<<<<<<< HEAD
+    else if (curchar == ' ') spaces++;
     else other++;
-=======
-    if (curchar == ' ') spaces++;
-    else other++;
->>>>>>> origin/feature
   }
 
   // Create the letter analysis table
@@ -68,19 +53,10 @@ int main()
                                count[i],
                                (((float) count[i]) / strlen(buffer)) * 100);
   }
-<<<<<<< HEAD
   // Output the number of other characters
   printf("%-10s%-15d%-15.2f\n","Other",
                               other,
-                              (((float) count[i]) / strlen(buffer)) * 100);
-
-
-}
-=======
-  // Output the number of other characters
-  printf("%-10s%-15d%-15.2f\n","Other",
-                              other,
-                              (((float) count[i]) / strlen(buffer)) * 100);
+                              (((float) other) / strlen(buffer)) * 100);
   printf("\nTotal spaces: %d\n", spaces);
   
   
@@ -131,4 +107,3 @@ int min(int count[])
   }  
   return min_pos;
 }
->>>>>>> origin/feature

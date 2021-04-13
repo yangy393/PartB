@@ -77,11 +77,13 @@ int main()
 
 }
 =======
-  printf("\nTotal spaces: %d\n", spaces);
   // Output the number of other characters
   printf("%-10s%-15d%-15.2f\n","Other",
                               other,
                               (((float) count[i]) / strlen(buffer)) * 100);
+  printf("\nTotal spaces: %d\n", spaces);
+  
+  
 
   // Find the max and min occuring character in the string, in particular the
   // position in the count array of each character
